@@ -17,7 +17,7 @@ const Nice: React.FC = () => {
       localStorage.setItem("token", token)};
 
     if (!token) {
-      navigate("/login");
+      navigate("/");
       return;
     }
 
@@ -29,7 +29,7 @@ const Nice: React.FC = () => {
         setName(res.data.firstname || res.data.username);
       } catch (err) {
         console.error("Failed to fetch user:", err);
-        navigate("/login");
+        navigate("/");
       }
     };
 
@@ -39,7 +39,7 @@ const Nice: React.FC = () => {
 
   const handleLogout = () => {
     localStorage.removeItem("token");
-    navigate("/login");
+    navigate("/");
   };
 
   return (
